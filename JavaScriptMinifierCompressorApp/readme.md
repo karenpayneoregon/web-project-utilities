@@ -44,6 +44,9 @@ Select a file and click Execute button. The update can be seen immediately in So
 
 ![Figure2](assets/figure2.png)
 
+
+![Figure3](assets/figure3.png)
+
 ## Why not offer multiple selections?
 
 Could have but want to keep it simple. If a developer is not comfortable altering code for this and I get enough request I will modify to permit multiple files at once.

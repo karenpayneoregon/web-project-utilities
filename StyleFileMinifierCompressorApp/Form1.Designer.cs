@@ -28,11 +28,40 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
-        this.components = new System.ComponentModel.Container();
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Text = "Form1";
+        openFileDialog1 = new OpenFileDialog();
+        ExecuteButton = new Button();
+        SuspendLayout();
+        // 
+        // openFileDialog1
+        // 
+        openFileDialog1.FileName = "openFileDialog1";
+        openFileDialog1.Filter = "css|*.css";
+        // 
+        // ExecuteButton
+        // 
+        ExecuteButton.Location = new Point(85, 55);
+        ExecuteButton.Name = "ExecuteButton";
+        ExecuteButton.Size = new Size(94, 29);
+        ExecuteButton.TabIndex = 0;
+        ExecuteButton.Text = "Execute";
+        ExecuteButton.UseVisualStyleBackColor = true;
+        ExecuteButton.Click += ExecuteButton_Click;
+        // 
+        // Form1
+        // 
+        AutoScaleDimensions = new SizeF(8F, 20F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(265, 139);
+        Controls.Add(ExecuteButton);
+        FormBorderStyle = FormBorderStyle.FixedToolWindow;
+        Name = "Form1";
+        StartPosition = FormStartPosition.CenterScreen;
+        Text = "Create .min.map for css file";
+        ResumeLayout(false);
     }
 
     #endregion
+
+    private OpenFileDialog openFileDialog1;
+    private Button ExecuteButton;
 }

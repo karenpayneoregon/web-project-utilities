@@ -23,8 +23,8 @@ internal class SheetsOperations
     }
     public static void CreateMap(string fileName)
     {
-
-        var command = $"UglifyCSS {Path.GetFileName(fileName)} >debugger.css.map";
+        // TODO Test this
+        var command = $"UglifyCSS {Path.GetFileName(fileName)} >{Path.GetFileName(fileName)}.css.map";
         Environment.CurrentDirectory = Path.GetDirectoryName(fileName)!;
 
         var start = new ProcessStartInfo

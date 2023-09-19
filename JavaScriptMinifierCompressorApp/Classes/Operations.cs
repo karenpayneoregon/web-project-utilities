@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 
 namespace JavaScriptMinifierCompressorApp.Classes;
 internal class Operations
@@ -50,6 +45,10 @@ internal class Operations
         }
     }
 
+    /// <summary>
+    /// Create .min and .map files
+    /// </summary>
+    /// <param name="fileName">Valid JavaScript file</param>
     public static (bool success, Exception exception) Execute(string fileName)
     {
         var mappedName = Path.ChangeExtension(fileName, ".min.js");

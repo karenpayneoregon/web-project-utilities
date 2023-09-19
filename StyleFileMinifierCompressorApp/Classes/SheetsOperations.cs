@@ -3,6 +3,10 @@
 namespace StyleFileMinifierCompressorApp.Classes;
 internal class SheetsOperations
 {
+    /// <summary>
+    /// Minimize file to same folder as the original file
+    /// </summary>
+    /// <param name="fileName">valid .css file</param>
     public static void Minimize(string fileName)
     {
 
@@ -21,10 +25,13 @@ internal class SheetsOperations
         using var process = Process.Start(start);
 
     }
+    /// <summary>
+    /// Create map file for fileName in the same folder as the original file
+    /// </summary>
+    /// <param name="fileName">valid .css file</param>
     public static void CreateMap(string fileName)
     {
-        // TODO Test this
-        var command = $"UglifyCSS {Path.GetFileName(fileName)} >{Path.GetFileName(fileName)}.css.map";
+        var command = $"UglifyCSS {Path.GetFileName(fileName)} >{Path.GetFileName(fileName)}.map";
         Environment.CurrentDirectory = Path.GetDirectoryName(fileName)!;
 
         var start = new ProcessStartInfo
@@ -35,6 +42,8 @@ internal class SheetsOperations
             Arguments = command,
             CreateNoWindow = true
         };
+
         using var process = Process.Start(start);
+
     }
 }

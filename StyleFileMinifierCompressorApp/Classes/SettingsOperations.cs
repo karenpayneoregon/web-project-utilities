@@ -5,7 +5,16 @@ namespace StyleFileMinifierCompressorApp.Classes;
 
 public class SettingsOperations
 {
-    public static string FileName { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "appsettings.json");
+    /// <summary>
+    /// File for saving/reading last folder used
+    /// </summary>
+    public static string FileName { get; set; } = 
+        Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "appsettings.json");
+
+    /// <summary>
+    /// Save last folder after finishing minimizing and mapping
+    /// </summary>
+    /// <param name="folderName">Folder path</param>
     public static void Save(string folderName)
     {
         AppSettings appSettings = new()
@@ -30,7 +39,10 @@ public class SettingsOperations
             };
 
             File.WriteAllText(FileName, JsonSerializer.Serialize(appSettings,
-                new JsonSerializerOptions { WriteIndented = true }));
+                new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                }));
         }
     }
     /// <summary>
